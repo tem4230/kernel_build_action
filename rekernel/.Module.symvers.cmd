@@ -1,0 +1,1 @@
+cmd_/home/user/kernel_build_action/rekernel/Module.symvers :=  sed 's/ko$$/o/'  /home/user/kernel_build_action/rekernel/modules.order | scripts/mod/modpost -m      -o /home/user/kernel_build_action/rekernel/Module.symvers -e -i Module.symvers -T - 
