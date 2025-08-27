@@ -1,13 +1,12 @@
-// Add rekernel header includes
-@includes@
+// Rule 1: Add rekernel header includes
 @@
 #include <uapi/linux/android/binder.h>
 + #ifdef CONFIG_REKERNEL
 + #include "../rekernel/rekernel.h"
 + #endif /* CONFIG_REKERNEL */
 
-// Add rekernel transaction function
-@add_rekernel_transaction@
+// Rule 2: Add rekernel transaction function
+@@
 identifier proc, tsk;
 @@
 + #ifdef CONFIG_REKERNEL
@@ -42,16 +41,17 @@ identifier proc, tsk;
 + }
 + #endif /* CONFIG_REKERNEL */
 
-// Add transaction flag check
+// Rule 3: Add transaction flag check
 @@
+- if ((t1->flags & t2->flags & (TF_ONE_WAY | TF_UPDATE_TXN)) != TF_ONE_WAY)
 + #ifdef CONFIG_REKERNEL
 + if ((t1->flags & t2->flags & TF_ONE_WAY) != TF_ONE_WAY || !t1->to_proc || !t2->to_proc)
 + #else
 + if ((t1->flags & t2->flags & (TF_ONE_WAY | TF_UPDATE_TXN)) != TF_ONE_WAY)
 + #endif /* CONFIG_REKERNEL */
 
-// Add rekernel transaction call
-@add_transaction_call@
+// Rule 4: Add rekernel transaction call
+@@
 expression reply, t, target_node, tr;
 @@
   trace_binder_transaction(reply, t, target_node);
