@@ -43,10 +43,7 @@ identifier proc, tsk;
 + #endif /* CONFIG_REKERNEL */
 
 // Add transaction flag check
-@transaction_flags@
-expression t1, t2;
 @@
-- if ((t1->flags & t2->flags & (TF_ONE_WAY | TF_UPDATE_TXN)) != TF_ONE_WAY)
 + #ifdef CONFIG_REKERNEL
 + if ((t1->flags & t2->flags & TF_ONE_WAY) != TF_ONE_WAY || !t1->to_proc || !t2->to_proc)
 + #else
