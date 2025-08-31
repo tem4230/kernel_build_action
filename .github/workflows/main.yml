@@ -31,7 +31,7 @@ jobs:
           kernel-url: https://github.com/tem4230/android_kernel_xiaomi_cas
           kernel-dir: msm-4.19
           kernel-branch: taffy
-          config: TB371FC_defconfig
+          config: cas_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
