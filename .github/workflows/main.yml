@@ -28,9 +28,9 @@ jobs:
     - name: Build Kernel
       uses: ./
       with:
-          kernel-url: https://github.com/tem4230/android_kernel_oppo_sm8250
+          kernel-url: https://github.com/tem4230/android_kernel_xiaomi_cas
           kernel-dir: msm-4.19
-          kernel-branch: oppo/sm8250_s_12.1
+          kernel-branch: taffy
           config: TB371FC_defconfig
           arch: arm64
           aosp-gcc: true
