@@ -36,7 +36,7 @@ jobs:
           aosp-gcc: true
           aosp-clang: true
           ksu: true
-          ksu-version: v0.9.5
+          ksu-version: main
           android-version: 11
           aosp-clang-version: r383902
           disable-lto: true
