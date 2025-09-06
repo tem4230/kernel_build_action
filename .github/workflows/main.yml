@@ -1,4 +1,4 @@
-: CI
+name: CI
 on:
   push:
     branches: main
@@ -28,10 +28,10 @@ jobs:
     - name: Build Kernel
       uses: ./
       with:
-          kernel-url: https://github.com/silime/android_kernel_lenovo_sm8250
+          kernel-url: https://github.com/tem4230/android_kernel_lenovo_sm8250
           kernel-dir: msm-4.19
           kernel-branch: android-11
-          config: vendor/paladin_prc_wifi-perf_defconfig
+          config: vendor/tb371fc_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
