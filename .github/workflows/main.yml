@@ -31,7 +31,7 @@ jobs:
           kernel-url: https://github.com/tem4230/android_kernel_xiaomi_cas
           kernel-dir: msm-4.19
           kernel-branch: taffy
-          config: vendor/kona-perf_defconfig
+          config: kona-perf_defconfig
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
