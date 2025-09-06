@@ -35,8 +35,6 @@ jobs:
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
-          ksu: true
-          ksu-version: main
           android-version: 11
           aosp-clang-version: r383902
           disable-lto: true
