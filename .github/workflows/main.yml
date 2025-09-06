@@ -1,4 +1,4 @@
-name: CI
+: CI
 on:
   push:
     branches: main
@@ -35,6 +35,9 @@ jobs:
           arch: arm64
           aosp-gcc: true
           aosp-clang: true
+          ksu: true
+          ksu-version: v0.9.5
           android-version: 11
           aosp-clang-version: r383902
+          disable-lto: true
           anykernel3: true
